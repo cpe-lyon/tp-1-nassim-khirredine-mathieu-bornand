@@ -57,4 +57,10 @@
 24. Créer un fichier dans votre dossier personnel puis utilisez locate pour le trouver. Apparaît-il? Pourquoi?
 - Non le fichier n'apparait pas car il a été créé après la dernière mise à jour de la base de données de ```locate```
 
+#### Exercice 4
+
+3. Cette question ne nécessite pas de réponse bien qu'il y ai le signe disant le contraire dans le TP.
+
+4. La variable PS1 servant à mettre en forme l'invite de commande à était remplacé par la ligne suivante : 
+- ```\e[91m[\A] \e[00m- \e[92m\u@\h\e[00m:\e[96m\w\e[00m$```
 
