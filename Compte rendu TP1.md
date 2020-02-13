@@ -64,4 +64,4 @@
 4. La variable PS1 servant à mettre en forme l'invite de commande à était remplacé par la ligne suivante : 
 - ```\e[91m[\A] \e[00m- \e[92m\u@\h\e[00m:\e[96m\w\e[00m$```
 
-[screen Exo4Q4](/img/inviteCommande_Exo4Q4.png)
+![screen Exo4Q4](/img/inviteCommande_Exo4Q4.png)
