@@ -8,25 +8,34 @@
 - La commande which affiche le chemin complet des commandes (shell).
 2. Quand on consulte une page du manuel, comment peut-on rechercher un terme (par exemple, chercher le terme option dans la page de manuel de which?
 - En tapant ```man which /termerecherché```
-3. On quitte le manuel en tapant ```q```
-4. Cette section parle des jeux et des programmes funs disponibles sur le système. (man N°section intro
+3. Comment quitte-t-on le manuel ?
+- On quitte le manuel en tapant ```q```
+4. Chaque section du manuel a une première page, qui présente le contenu de la section. Aﬀicher la première page de la section 6; de quoi parle cette section?
+- Cette section parle des jeux et des programmes funs disponibles sur le système. (man N°section intro)
 
 ##### Navigation dans l’arborescence des fichiers
 
-1. ```cd /var/log```
-2. ```cd ..```
-3. ```cd```
-4. ```cd -```
-5. Impossible, nous n'avons pas les droits
-6. De notre côté ça nous met ```sudo: cd: command not found```. Car la commande ```cd``` est intégrée au shell. Il faut donc faire ```sudo -i``` et ensuite ```cd /root``` .
-7. * mkdir -p dossier1/fichier1
+1. allez dans le dossier /var/log : ```cd /var/log```
+2. remontez dans le dossier parent (/var) en utilisant un chemin relatif : ```cd ..```
+3. retournez dans le dossier personnel : ```cd```
+4. revenez au dossier précédent (/var) **sans utiliser de chemin** ```cd -```
+5. essayez d’accéder au dossier /root; que se passe-t-il? 
+- Impossible, nous n'avons pas les droits
+6. essayez la commande sudo cd /root; que se passe-t-il? Expliquez
+- De notre côté ça nous met ```sudo: cd: command not found```. Car la commande ```cd``` est intégrée au shell. Il faut donc faire ```sudo -i``` et ensuite ```cd /root``` .
+7. à partir de votre dossier personnel, créez l’arborescence suivante : (voir image TP1)
+* mkdir -p dossier1/fichier1
     * mkdir -p dossier2/dossier2.2/fichier2
     * mkdir dossier2/dossier2.2/fichier3
     * mkdir dossier2/dossier2.1
-8. ```rm: cannot remove 'dossier1/fichier1': Is a directory```
-9. Il faut ajouter ```-d```, par exemple: ```rm -d dossier1```
-10. ```rm: cannot remove 'dossier2' : Directory not empty```
-11. Il faut ajouter ```-r```, pour supprimer le contenu récursivement. Par exemple: ```rm -d -r dossier2```
+8. revenez dans votre dossier personnel; à l’aide de la commande rm, essayez de supprimer Fichier1, puisDossier1; que se passe-t-il?
+- ```rm: cannot remove 'dossier1/fichier1': Is a directory```
+9. quelle commande permet de supprimer un dossier?
+- Il faut ajouter ```-d```, par exemple: ```rm -d dossier1```
+10. que se passe-t-il quand on applique cette commande à Dossier2?
+- ```rm: cannot remove 'dossier2' : Directory not empty```
+11.  Comment supprimer en une seule commande Dossier2 et son contenu?
+- Il faut ajouter ```-r```, pour supprimer le contenu récursivement. Par exemple: ```rm -d -r dossier2```
 
 ##### Commandes importantes
 1. En tapant ```date```.La commande ```time``` sert à chronométrer une tâche.
