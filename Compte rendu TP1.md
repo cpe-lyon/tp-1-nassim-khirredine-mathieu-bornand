@@ -38,27 +38,48 @@
 - Il faut ajouter ```-r```, pour supprimer le contenu récursivement. Par exemple: ```rm -d -r dossier2```
 
 ##### Commandes importantes
-1. En tapant ```date```.La commande ```time``` sert à chronométrer une tâche.
-2. Les fichiers commençant par un "." sont les fichiers cachés.
-3. ```which ls```
-4. Non il n'existe pas d'entrée manuel pour cette commande. C'est l'alias de la commande ```ls -alF``` .
-5. ```ll /usr/bin```
-6. Ca affiche le contenu du répertoire parent.
-7. ```pwd```
-8. La première fois elle écrit 'yo' dans le fichier 'plop' et la deuxième fois elle remplace le contenu du fichier 'plop' par 'yo'.
-9. Elle concatène le fichier 'plop' par 'yo' lorsqu'on l'éxecute 2 fois, le contenu du fichier sera donc 'yoyo'.
-10. Cette commande permet de déterminer le type d'un fichier.
-11. Le contenu a aussi été remplacé dans le fichier "titi". Lorsqu'on supprime le fichier "toto", le fichier "titi" reste.
-12. Ca a aussi changé le contenu de "tutu". En inversant, ça change aussi le contenu de "titi". Ca a supprimé les deux fichiers.
-13. ```CTRL + S``` permet d'arrêter le défilement et ```CTRL + Q``` permet de le reprendre.
-14. Pour afficher les 5 premières lignes : ```head -5 /var/log/syslog``` et pour afficher les 15 dernières : ```tail -15 /var/log/syslog``` .
-15. La commande ```less``` permet de visualiser un fichier texte page par page.
-16. ```cat /etc/passwd``` permet d'afficher les utilisateurs et certains informations relatives. Pour afficher la page manuel : ```man 5 intro```
-17. ```cut -d: -f1 /etc/passwd | sort -r```
-18. ```cat /etc/passwd | wc``` et on a 32 utilisateurs.
-19. ```man -k conversion | wc -l``` on obtient donc 4.
-20. ```find . -name passwd```
-21. ```find . name passwd >> ~/list_passwd_files.txt 2>>/dev/null```
+1. Quelle commande permet d’aﬀicher l’heure? A quoi sert la commande time?
+- En tapant ```date```.La commande ```time``` sert à chronométrer une tâche.
+2. Dans votre dossier personnel, tapez successivement les commandes ls puis la; que peut-on en déduire sur les fichiers commençant par un point?
+- Les fichiers commençant par un "." sont les fichiers cachés.
+3. Où se situe le programmels?
+- ```which ls```
+4. Essayez la commande ll. Existe-t-il une entrée de manuel pour cette commande? Utilisez les commandes alias ou alias pour en savoir plus sur la nature de cette commande.
+- Non il n'existe pas d'entrée manuel pour cette commande. C'est l'alias de la commande ```ls -alF``` .
+5. Quelle commande permet d’afficher les fichiers contenus dans le dossier/bin? 
+- ```ll /usr/bin```
+6. Que fait la commandels .. ? 
+- Ca affiche le contenu du répertoire parent.
+7. Quelle commande donne le chemin complet du dossier courant?
+- ```pwd```
+8. Que fait la commande echo 'yo' > plop exécutée 2 fois?
+- La première fois elle écrit 'yo' dans le fichier 'plop' et la deuxième fois elle remplace le contenu du fichier 'plop' par 'yo'.
+9. Que fait la commande echo 'yo' >> plopexécutée 2 fois?
+- Elle concatène le fichier 'plop' par 'yo' lorsqu'on l'éxecute 2 fois, le contenu du fichier sera donc 'yoyo'.
+10. A quoi sert la commandefile? Essayez la sur des fichiers de types différents
+- Cette commande permet de déterminer le type d'un fichier.
+11. Créez un fichier toto qui contient la chaîne Hello Toto !; créer ensuite un lien titiv ers ce fichier avec la commande ln toto titi. Modifiez à présent le contenu de toto et affichez le contenu detiti: qu’observe-t-on? Supprimez le fichier toto; quelle conséquence cela a-t-il sur titi?
+- Le contenu a aussi été remplacé dans le fichier "titi". Lorsqu'on supprime le fichier "toto", le fichier "titi" reste.
+12. Créez à présent un lien symbolique tutu sur titi avec la commande ln -s titi tutu. Modifiez le contenu de titi; quelle conséquence pour tutu? Et inversement? Supprimez le fichier titi; quelle conséquence cela a-t-il sur tutu?
+- Ca a aussi changé le contenu de "tutu". En inversant, ça change aussi le contenu de "titi". Ca a supprimé les deux fichiers.
+13. Aﬀichez à l’écran le fichier/var/log/syslog. Quels raccourcis clavier permettent d’interrompre et reprendre le défilement à l’écran?
+- ```CTRL + S``` permet d'arrêter le défilement et ```CTRL + Q``` permet de le reprendre.
+14. Aﬀichez les 5 premières lignes du fichier/var/log/syslog, puis les 15 dernières, puis seulement leslignes 10 à 20.
+- Pour afficher les 5 premières lignes : ```head -5 /var/log/syslog``` et pour afficher les 15 dernières : ```tail -15 /var/log/syslog``` .
+15. Que fait la commande dmesg | less?
+- La commande ```less``` permet de visualiser un fichier texte page par page.
+16. Affichez à l’écran le fichier/etc/passwd; que contient-il? Quelle commande permet d’afficher la page de manuel de ce fichier?
+- ```cat /etc/passwd``` permet d'afficher les utilisateurs et certains informations relatives. Pour afficher la page manuel : ```man 5 intro```
+17. Affichez seulement la première colonne triée par ordre alphabétique inverse
+- ```cut -d: -f1 /etc/passwd | sort -r```
+18. Quelle commande nous donne le nombre d’utilisateurs ayant un compte sur cette machine (pas seule-ment les utilisateurs connectés)?
+- ```cat /etc/passwd | wc``` et on a 32 utilisateurs.
+19. Combien de pages de manuel comportent le mot-clé conversion dans leur description?
+- ```man -k conversion | wc -l``` on obtient donc 4.
+20. A l’aide de la commande find, recherchez tous les fichiers se nommant passwd présents sur la machine
+- ```find . -name passwd```
+21. Modifiez la commande précédente pour que la liste des fichiers trouvés soit enregistrée dans le fichier~/list_passwd_files.txtet que les erreurs soient redirigées vers le fichier spécial/dev/null
+- ```find . name passwd >> ~/list_passwd_files.txt 2>>/dev/null```
 22. Dans votre dossier personnel, utilisez la commande grep pour chercher où est défini l’alias ll vu précédemment
 - ```grep -r "alias ll"``` 
 23. Utilisez la commande locate pour trouver le fichier history.log.
